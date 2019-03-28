@@ -7,6 +7,7 @@ buildscript {
   dependencies {
     classpath(deps.android.gradlePlugin)
     classpath(deps.kotlin.gradlePlugin)
+    classpath(deps.okbuck.okbuckPlugin)
   }
 }
 
@@ -16,3 +17,6 @@ allprojects {
     jcenter()
   }
 }
+
+apply(from = "apply_okbuck.gradle" )
+

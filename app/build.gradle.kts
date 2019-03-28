@@ -20,23 +20,37 @@ android {
     versionName = "1.0"
     vectorDrawables.useSupportLibrary = true
   }
+
+  signingConfigs {
+    create("release") {
+      // TODO release key
+      storeFile = rootProject.file("app/debug.keystore")
+      storePassword = properties["UPLOAD_STORE_PASSWORD"] as String? ?: ""
+      keyPassword = properties["UPLOAD_KEY_PASSWORD"] as String? ?: ""
+      keyAlias = properties["UPLOAD_KEY_ALIAS"] as String? ?: ""
+      isV2SigningEnabled = true
+    }
+    getByName("debug") {
+      storeFile = rootProject.file("app/debug.keystore")
+    }
+  }
+
   buildTypes {
     getByName("debug") {
+      signingConfig = signingConfigs.findByName("debug")
       applicationIdSuffix = ".debug"
       versionNameSuffix = "-dev"
     }
     getByName("release") {
-
-      postprocessing.apply {
-        proguardFiles("proguard-rules.pro")
-        isOptimizeCode = true
-        isObfuscate = true
-        isRemoveUnusedCode = true
-        isRemoveUnusedResources = true
-      }
+      signingConfig = signingConfigs.findByName("release")
+      proguardFiles("proguard-rules.pro")
+      isMinifyEnabled = true
+      isShrinkResources = true
+      setCrunchPngs(true)
     }
   }
 }
+
 kapt {
   useBuildCache = true
 }

@@ -1,0 +1,13 @@
+apply plugin: 'com.uber.okbuck'
+
+okbuck {
+  lint {
+    disabled = true
+  }
+  jetifier {
+    aarOnly = true
+    exclude = [
+      "androidx.*"
+    ]
+  }
+}

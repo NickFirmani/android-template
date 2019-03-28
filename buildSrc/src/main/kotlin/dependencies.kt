@@ -6,7 +6,7 @@ object deps {
   }
 
   object android {
-    const val gradlePlugin = "com.android.tools.build:gradle:3.5.0-alpha07"
+    const val gradlePlugin = "com.android.tools.build:gradle:3.2.0"
 
     object androidx {
       const val appcompat = "androidx.appcompat:appcompat:1.0.2"
@@ -32,5 +32,9 @@ object deps {
 
   object test {
     const val junit = "junit:junit:4.12"
+  }
+
+  object okbuck {
+    const val okbuckPlugin = "com.uber:okbuck:0.47.0"
   }
 }
