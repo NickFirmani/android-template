@@ -1,6 +1,8 @@
 apply plugin: 'com.uber.okbuck'
 
 okbuck {
+  buildToolVersion = "28.0.3"
+  target = "android-28"
   lint {
     disabled = true
   }
@@ -9,5 +11,29 @@ okbuck {
     exclude = [
       "androidx.*"
     ]
+  }
+  exopackage = [
+    app: true
+  ]
+  primaryDexPatterns = [
+    'app': [
+      '^com/nickfirmani/template/AppShell^',
+      '^com/nickfirmani/template/BuildConfig^',
+      '^com/facebook/buck/android/support/exopackage/',
+    ]
+  ]
+  appLibDependencies = [
+    'appRelease': [
+      'buck-android-support',
+    ],
+    'appDebug'  : [
+      'buck-android-support',
+    ]
+  ]
+  externalDependencies {
+    downloadInBuck = false
+  }
+  wrapper {
+    watch += ["**/*.gradle.kts"]
   }
 }

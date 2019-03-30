@@ -19,6 +19,7 @@ android {
     versionCode = 1
     versionName = "1.0"
     vectorDrawables.useSupportLibrary = true
+    multiDexEnabled = true
   }
 
   signingConfigs {
@@ -56,7 +57,7 @@ kapt {
 }
 
 dependencies {
-
+  implementation(fileTree(baseDir = "libs"))
   implementation(deps.kotlin.stdlib.jdk7)
 
   // AndroidX
