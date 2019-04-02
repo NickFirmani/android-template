@@ -34,6 +34,9 @@ okbuck {
     downloadInBuck = false
   }
   wrapper {
-    watch += ["**/*.gradle.kts"]
+    watch += ["**/*.gradle.kts", "**/dependencies.kt"]
+  }
+  intellij {
+    sources = true
   }
 }

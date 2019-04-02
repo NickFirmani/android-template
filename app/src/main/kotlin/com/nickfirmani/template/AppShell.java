@@ -15,7 +15,9 @@ public class AppShell extends ExopackageApplication {
       // from the android_build_config() rule. The value of the flags
       // will be set based on the "exopackage_modes" argument to
       // android_binary().
-      // This will also show up as red in your editor.
-      com.nickfirmani.template.BuildConfig.EXOPACKAGE_FLAGS);
+      // This will also show up as red in your editor, unless you run `buckw project`
+      // TODO: Convert this file to kotlin (and configure okbuck to pick it up)
+//      com.nickfirmani.template.BuildConfig.EXOPACKAGE_FLAGS);
+      1); // ??
   }
 }

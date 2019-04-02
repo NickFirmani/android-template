@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Template</string>
+  <string name="controller_main_button">Load Text</string>
 </resources>

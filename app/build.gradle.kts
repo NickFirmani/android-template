@@ -1,5 +1,6 @@
 plugins {
   id("com.android.application")
+  id("org.jetbrains.kotlin.android.extensions")
   kotlin("android")
   kotlin("kapt")
 }
@@ -64,6 +65,21 @@ dependencies {
   implementation(deps.android.androidx.appcompat)
   implementation(deps.android.androidx.corektx)
   implementation(deps.android.androidx.constraintLayout)
+  implementation(deps.android.androidx.material)
+
+  // Autodispose
+  implementation(deps.autoDispose.core)
+  implementation(deps.autoDispose.android)
+  implementation(deps.autoDispose.androidKtx)
+  implementation(deps.autoDispose.kotlin)
+
+  // Conductor + Mosby
+  implementation(deps.conductor.core)
+  implementation(deps.conductor.autodispose)
+  implementation(deps.mosby.conductor)
+
+  // Rxbinding
+  implementation(deps.rxBinding.core)
 
   // Test
   testImplementation(deps.test.junit)

@@ -102,7 +102,7 @@ getChanges ( ) {
         ["type", "f"],
         ["anyof",
             ["suffix", "gradle"],
-            ["name", ["gradle-wrapper.properties"]]
+            ["name", ["*.gradle.kts", "gradle-wrapper.properties", "dependencies.kt"]]
         ],
         ["not",
             ["dirname", ".okbuck"]
