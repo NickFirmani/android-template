@@ -3,6 +3,7 @@
 object deps {
   object versions {
     const val kotlin = "1.3.21"
+    const val dagger = "2.22"
   }
 
   object android {
@@ -28,6 +29,14 @@ object deps {
       const val core = "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
       const val jdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
     }
+  }
+
+  object dagger {
+    const val core = "com.google.dagger:dagger:${versions.dagger}"
+  }
+
+  object kapt {
+    const val dagger = "com.google.dagger:dagger-compiler:${versions.dagger}"
   }
 
   object test {

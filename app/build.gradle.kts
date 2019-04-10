@@ -64,6 +64,10 @@ dependencies {
   implementation(deps.android.androidx.corektx)
   implementation(deps.android.androidx.constraintLayout)
 
+
+  implementation(deps.dagger.core)
+  kapt(deps.kapt.dagger)
+
   // Test
   testImplementation(deps.test.junit)
 }

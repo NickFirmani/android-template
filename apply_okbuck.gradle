@@ -10,4 +10,10 @@ okbuck {
       "androidx.*"
     ]
   }
+  externalDependencies {
+    downloadInBuck = false
+  }
+  wrapper {
+    watch += ["**/*/build.gradle.kts", "**/dependencies.kt"]
+  }
 }
