@@ -1,6 +1,7 @@
 package com.nickfirmani.template
 
 import com.bluelinelabs.conductor.autodispose.ControllerScopeProvider
+import com.nickfirmani.template.base.BasePresenter
 import com.uber.autodispose.autoDisposable
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

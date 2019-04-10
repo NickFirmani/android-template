@@ -18,5 +18,4 @@ allprojects {
   }
 }
 
-apply(from = "apply_okbuck.gradle" )
-
+apply(from = "apply_okbuck.gradle")

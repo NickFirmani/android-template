@@ -81,6 +81,19 @@ dependencies {
   // Rxbinding
   implementation(deps.rxBinding.core)
 
+  // IO
+  implementation(deps.io.retrofit.core)
+  implementation(deps.io.retrofit.moshiConverter)
+  implementation(deps.io.retrofit.rx2Adapter)
+  implementation(deps.io.okhttp.core)
+  implementation(deps.io.moshi)
+
+  api(deps.dagger.core)
+
+  // Kapt
+  kapt(deps.kapt.dagger)
+  kapt(deps.kapt.moshi)
+
   // Test
   testImplementation(deps.test.junit)
 }

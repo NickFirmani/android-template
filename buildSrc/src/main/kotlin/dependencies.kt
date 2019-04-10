@@ -7,6 +7,10 @@ object deps {
     const val mosby = "3.1.0"
     const val autodispose = "1.1.0"
     const val rxBinding = "3.0.0-alpha2"
+    const val dagger = "2.22"
+    const val moshi = "1.8.0"
+    const val retrofit = "2.5.0"
+    const val okhttp = "3.14.0"
   }
 
   object android {
@@ -33,6 +37,29 @@ object deps {
       const val core = "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
       const val jdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
     }
+  }
+
+  object dagger {
+    const val core = "com.google.dagger:dagger:${versions.dagger}"
+  }
+
+  object io {
+    object retrofit {
+      const val core = "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+      const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${versions.retrofit}"
+      const val rx2Adapter ="com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
+    }
+
+    object okhttp {
+      const val core = "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+    }
+
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${versions.moshi}"
+  }
+
+  object kapt {
+    const val dagger = "com.google.dagger:dagger-compiler:${versions.dagger}"
+    const val moshi = "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
   }
 
   object autoDispose {

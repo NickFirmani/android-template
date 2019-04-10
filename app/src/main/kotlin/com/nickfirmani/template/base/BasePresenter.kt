@@ -1,4 +1,4 @@
-package com.nickfirmani.template
+package com.nickfirmani.template.base
 
 import com.bluelinelabs.conductor.autodispose.ControllerScopeProvider
 import com.hannesdorfmann.mosby3.mvp.MvpBasePresenter
