@@ -88,7 +88,7 @@ dependencies {
   implementation(deps.io.okhttp.core)
   implementation(deps.io.moshi)
 
-  api(deps.dagger.core)
+  implementation(deps.dagger.core)
 
   // Kapt
   kapt(deps.kapt.dagger)
