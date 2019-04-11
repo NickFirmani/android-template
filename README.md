@@ -1,0 +1,2 @@
+1. Edit your `.bash_profile` or similar to add a new environment variable `ANDROID_HOME` to the location of your android sdk, typically `~/Library/Android/sdk` 
+1. Install `watchman` by `brew install watchman`
