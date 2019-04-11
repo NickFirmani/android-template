@@ -21,10 +21,10 @@ abstract class NetworkModule {
 
   @NetworkInterceptor
   @Multibinds
-  internal abstract fun provideNetworkInterceptors(): Set<Interceptor>
+  abstract fun provideNetworkInterceptors(): Set<Interceptor>
 
   @Multibinds
-  internal abstract fun provideInterceptors(): Set<Interceptor>
+  abstract fun provideInterceptors(): Set<Interceptor>
 
   @Module
   companion object {
@@ -35,7 +35,7 @@ abstract class NetworkModule {
     @Provides
     @JvmStatic
     @Singleton
-    internal fun provideCache(@AppContext context: Context): Cache {
+    fun provideCache(@AppContext context: Context): Cache {
       if (Looper.myLooper() == Looper.getMainLooper()) {
         throw IllegalStateException("Cache initialized on main thread.")
       }
@@ -45,7 +45,7 @@ abstract class NetworkModule {
     @Provides
     @JvmStatic
     @Singleton
-    internal fun provideOkHttpClient(
+    fun provideOkHttpClient(
       cache: Cache,
       interceptors: Set<@JvmSuppressWildcards Interceptor>,
       @NetworkInterceptor networkInterceptors: Set<@JvmSuppressWildcards Interceptor>
@@ -68,14 +68,14 @@ abstract class NetworkModule {
     @Provides
     @JvmStatic
     @Singleton
-    internal fun provideMoshi(): Moshi {
+    fun provideMoshi(): Moshi {
       return Moshi.Builder().build()
     }
 
     @Provides
     @JvmStatic
     @Singleton
-    internal fun provideRxJavaCallAdapterFactory(): RxJava2CallAdapterFactory {
+    fun provideRxJavaCallAdapterFactory(): RxJava2CallAdapterFactory {
       return RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io())
     }
   }
