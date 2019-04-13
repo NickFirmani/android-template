@@ -2,7 +2,7 @@
 
 object deps {
   object versions {
-    const val kotlin = "1.3.21"
+    const val kotlin = "1.3.30"
     const val conductor = "3.0.0-rc1"
     const val mosby = "3.1.0"
     const val autodispose = "1.1.0"
