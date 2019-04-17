@@ -7,26 +7,24 @@ import com.bluelinelabs.conductor.autodispose.ControllerScopeProvider
 import com.hannesdorfmann.mosby3.mvp.conductor.MvpController
 import com.jakewharton.rxbinding3.view.clicks
 import com.nickfirmani.template.annotations.PerController
+import com.uber.autodispose.ScopeProvider
 import com.uber.autodispose.autoDisposable
-import dagger.Component
 import dagger.Module
 import dagger.Provides
+import dagger.Subcomponent
 import kotlinx.android.synthetic.main.controller_main.view.*
 
 class MainViewController : MvpController<Main.View, Main.Presenter>(), Main.View {
 
   override fun createPresenter(): Main.Presenter {
-    return DaggerMainComponent.builder()
-      .appComponent(TemplateApp.component)
-      .mainPresenterModule(MainPresenterModule(ControllerScopeProvider.from(this)))
-      .build()
-      .presenter()
+    return TemplateApp.component.mainComponent()
+      .mainPresenterModule(MainPresenterModule(ControllerScopeProvider.from(this))).build().presenter()
   }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View  {
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
     val view = inflater.inflate(R.layout.controller_main, container, false)
     view.controllerMainButton.clicks()
-      .autoDisposable(ControllerScopeProvider.from(this))
+      .autoDisposable(ScopeProvider.UNBOUND)
       .subscribe { presenter.pollText() }
     return view
   }
@@ -37,18 +35,29 @@ class MainViewController : MvpController<Main.View, Main.Presenter>(), Main.View
 }
 
 @PerController
-@Component(modules = [MainPresenterModule::class], dependencies = [AppComponent::class])
+@Subcomponent(
+  modules = [
+    MainPresenterModule::class,
+    GoogleApiModule::class
+  ]
+)
 interface MainComponent {
 
   @PerController
   fun presenter(): MainPresenter
+
+  @Subcomponent.Builder
+  interface Builder {
+    fun mainPresenterModule(module: MainPresenterModule): Builder
+    fun build(): MainComponent
+  }
 }
 
 @Module
-class MainPresenterModule(val controllerScopeProvider: ControllerScopeProvider) {
+class MainPresenterModule(private val controllerScopeProvider: ControllerScopeProvider) {
 
   @PerController
   @Provides
-  fun provideMainPresenter() = MainPresenter(controllerScopeProvider)
+  fun provideMainPresenter(factory: MainPresenterFactory): MainPresenter = factory.create(controllerScopeProvider)
 }
 

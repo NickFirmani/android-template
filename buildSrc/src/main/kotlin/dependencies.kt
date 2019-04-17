@@ -58,6 +58,7 @@ object deps {
   }
 
   object kapt {
+    const val autoFactory = "com.google.auto.factory:auto-factory:1.0-beta6"
     const val dagger = "com.google.dagger:dagger-compiler:${versions.dagger}"
     const val moshi = "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
   }

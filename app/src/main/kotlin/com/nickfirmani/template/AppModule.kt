@@ -7,7 +7,7 @@ import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton
 
-@Module
+@Module(subcomponents = [MainComponent::class])
 abstract class AppModule {
 
   @Binds

@@ -23,6 +23,11 @@ android {
     multiDexEnabled = true
   }
 
+  compileOptions {
+    setSourceCompatibility(JavaVersion.VERSION_1_8)
+    setTargetCompatibility(JavaVersion.VERSION_1_8)
+  }
+
   signingConfigs {
     create("release") {
       // TODO release key
@@ -55,6 +60,7 @@ android {
 
 kapt {
   useBuildCache = true
+  correctErrorTypes = true
 }
 
 dependencies {
@@ -89,10 +95,14 @@ dependencies {
   implementation(deps.io.moshi)
 
   implementation(deps.dagger.core)
+  compileOnly(deps.kapt.autoFactory)
 
   // Kapt
+  kapt(deps.kapt.autoFactory)
+  annotationProcessor(deps.kapt.autoFactory)
   kapt(deps.kapt.dagger)
   kapt(deps.kapt.moshi)
+
 
   // Test
   testImplementation(deps.test.junit)
