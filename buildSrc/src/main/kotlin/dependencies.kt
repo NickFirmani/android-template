@@ -2,7 +2,7 @@
 
 object deps {
   object versions {
-    const val kotlin = "1.3.30"
+    const val kotlin = "1.3.20"
     const val conductor = "3.0.0-rc1"
     const val mosby = "3.1.0"
     const val autodispose = "1.1.0"
@@ -33,6 +33,7 @@ object deps {
 
   object kotlin {
     const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+    const val reflect = "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}"
     object stdlib {
       const val core = "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
       const val jdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"

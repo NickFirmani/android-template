@@ -39,4 +39,7 @@ okbuck {
   intellij {
     sources = true
   }
+
+  // For Kapt Correct Error Types
+  buckBinary="com.github.nickfirmani:buck:83f12aa2f4@pex"
 }

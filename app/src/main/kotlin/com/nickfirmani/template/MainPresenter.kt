@@ -1,6 +1,5 @@
 package com.nickfirmani.template
 
-import android.util.Log
 import com.bluelinelabs.conductor.autodispose.ControllerScopeProvider
 import com.google.auto.factory.AutoFactory
 import com.google.auto.factory.Provided

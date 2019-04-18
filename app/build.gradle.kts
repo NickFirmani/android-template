@@ -66,6 +66,7 @@ kapt {
 dependencies {
   implementation(fileTree(baseDir = "libs"))
   implementation(deps.kotlin.stdlib.jdk7)
+  implementation(deps.kotlin.reflect)
 
   // AndroidX
   implementation(deps.android.androidx.appcompat)
@@ -97,9 +98,10 @@ dependencies {
   implementation(deps.dagger.core)
   compileOnly(deps.kapt.autoFactory)
 
-  // Kapt
-  kapt(deps.kapt.autoFactory)
-  annotationProcessor(deps.kapt.autoFactory)
+  // Kapt / Annotation Processing
+  annotationProcessor(deps.kapt.autoFactory) {
+    exclude(group="com.squareup", module="javapoet")
+  }
   kapt(deps.kapt.dagger)
   kapt(deps.kapt.moshi)
 
