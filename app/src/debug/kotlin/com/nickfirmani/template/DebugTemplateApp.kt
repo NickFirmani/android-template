@@ -1,9 +1,8 @@
 package com.nickfirmani.template
 
 import android.app.Application
-import com.facebook.buck.android.support.exopackage.DefaultApplicationLike
 
-open class TemplateApp(val appContext: Application) : DefaultApplicationLike() {
+class DebugTemplateApp(appContext: Application): TemplateApp(appContext = appContext) {
   companion object {
     lateinit var component: AppComponent
       private set
@@ -11,8 +10,9 @@ open class TemplateApp(val appContext: Application) : DefaultApplicationLike() {
 
   override fun onCreate() {
     super.onCreate()
-    component = DaggerAppComponent.builder()
+    component = DaggerDebugAppComponent.builder()
       .application(appContext)
       .build()
+
   }
 }

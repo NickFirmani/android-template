@@ -17,6 +17,7 @@ class MainPresenter constructor(
 
   override fun pollText() {
     googleApi.generate204()
+      .subscribeOn(Schedulers.io())
       .observeOn(AndroidSchedulers.mainThread())
       .doOnSuccess { ifViewAttached { view -> view.showText("Generated 204") } }
       .ignoreElement()

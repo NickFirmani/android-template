@@ -11,6 +11,8 @@ object deps {
     const val moshi = "1.8.0"
     const val retrofit = "2.5.0"
     const val okhttp = "3.14.0"
+    const val stetho = "1.5.1"
+    const val chuck = "1.1.0"
   }
 
   object android {
@@ -53,6 +55,10 @@ object deps {
 
     object okhttp {
       const val core = "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+
+      object debug {
+        const val logging = "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+      }
     }
 
     const val moshi = "com.squareup.moshi:moshi-kotlin:${versions.moshi}"
@@ -82,6 +88,19 @@ object deps {
 
   object rxBinding {
     const val core = "com.jakewharton.rxbinding3:rxbinding-core:${versions.rxBinding}"
+  }
+
+  object stetho {
+    object debug {
+      const val core = "com.facebook.stetho:stetho:${versions.stetho}"
+      const val okhttp = "com.facebook.stetho:stetho-okhttp3:${versions.stetho}"
+      const val timber = "com.facebook.stetho:stetho-timber:${versions.stetho}"
+    }
+  }
+
+  object chuck {
+    const val debug = "com.readystatesoftware.chuck:library:${versions.chuck}"
+    const val release = "com.readystatesoftware.chuck:library-no-op:${versions.chuck}"
   }
 
   object test {

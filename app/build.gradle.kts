@@ -105,6 +105,13 @@ dependencies {
   kapt(deps.kapt.dagger)
   kapt(deps.kapt.moshi)
 
+  // Debug
+  debugImplementation(deps.io.okhttp.debug.logging)
+  debugImplementation(deps.stetho.debug.core)
+  debugImplementation(deps.stetho.debug.okhttp)
+  debugImplementation(deps.stetho.debug.timber)
+  debugImplementation(deps.chuck.debug)
+  releaseImplementation(deps.chuck.release)
 
   // Test
   testImplementation(deps.test.junit)

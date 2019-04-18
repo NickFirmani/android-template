@@ -18,6 +18,7 @@ okbuck {
   primaryDexPatterns = [
     'app': [
       '^com/nickfirmani/template/AppShell^',
+      '^com/nickfirmani/template/DebugAppShell^',
       '^com/nickfirmani/template/BuildConfig^',
       '^com/facebook/buck/android/support/exopackage/',
     ]

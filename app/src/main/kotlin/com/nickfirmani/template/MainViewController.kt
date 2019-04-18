@@ -17,7 +17,8 @@ import kotlinx.android.synthetic.main.controller_main.view.*
 class MainViewController : MvpController<Main.View, Main.Presenter>(), Main.View {
 
   override fun createPresenter(): Main.Presenter {
-    return TemplateApp.component.mainComponent()
+    // TODO!!
+    return DebugTemplateApp.component.mainComponent()
       .mainPresenterModule(MainPresenterModule(ControllerScopeProvider.from(this))).build().presenter()
   }
 
