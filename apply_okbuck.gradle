@@ -15,6 +15,9 @@ okbuck {
   exopackage = [
     app: true
   ]
+  test {
+    robolectric = true
+  }
   primaryDexPatterns = [
     'app': [
       '^com/nickfirmani/template/AppShell^',
@@ -42,5 +45,5 @@ okbuck {
   }
 
   // For Kapt Correct Error Types
-  buckBinary="com.github.nickfirmani:buck:83f12aa2f4@pex"
+  buckBinary="com.github.nickfirmani:buck:20e9bea076@pex"
 }
