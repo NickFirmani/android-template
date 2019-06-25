@@ -45,5 +45,5 @@ okbuck {
   }
 
   // For Kapt Correct Error Types
-  buckBinary="com.github.nickfirmani:buck:20e9bea076@pex"
+  buckBinary="com.github.nickfirmani:buck:2c8f3cbef5@pex"
 }
