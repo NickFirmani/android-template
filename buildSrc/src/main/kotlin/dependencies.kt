@@ -108,6 +108,6 @@ object deps {
   }
 
   object okbuck {
-    const val okbuckPlugin = "com.uber:okbuck:0.47.0"
+    const val okbuckPlugin = "com.uber:okbuck:0.48.4"
   }
 }
