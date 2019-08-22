@@ -16,7 +16,7 @@ object deps {
   }
 
   object android {
-    const val gradlePlugin = "com.android.tools.build:gradle:3.2.0"
+    const val gradlePlugin = "com.android.tools.build:gradle:3.6.0-alpha06"
 
     object androidx {
       const val appcompat = "androidx.appcompat:appcompat:1.0.2"
