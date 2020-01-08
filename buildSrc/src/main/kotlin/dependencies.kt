@@ -16,7 +16,7 @@ object deps {
   }
 
   object android {
-    const val gradlePlugin = "com.android.tools.build:gradle:3.6.0-alpha10"
+    const val gradlePlugin = "com.android.tools.build:gradle:4.0.0-alpha08"
 
     object androidx {
       const val appcompat = "androidx.appcompat:appcompat:1.0.2"
@@ -26,7 +26,7 @@ object deps {
     }
 
     object build {
-      const val buildToolsVersion = "28.0.3"
+      const val buildToolsVersion = "29.0.2"
       const val compileSdkVersion = 28
       const val minSdkVersion = 21
       const val targetSdkVersion = 28
